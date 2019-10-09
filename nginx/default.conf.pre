@@ -1,0 +1,20 @@
+upstream client {
+  server 172.30.0.7:3000;
+}
+
+upstream api {
+  server 172.30.0.6:5000;
+}
+
+server {
+  listen 80;
+  
+  location / {
+    proxy_pass http://172.30.0.7;
+  }
+  
+  location /api {
+    rewrite /api/(.*) /$1 break;
+    proxy_pass http://172.30.0.6;
+  }
+}
