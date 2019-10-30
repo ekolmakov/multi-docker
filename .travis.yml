@@ -13,7 +13,7 @@ script:
   - docker run -e CI=true ekolmakov/react-test npm test
   
 after_success:
-
+  # ! private repo by default
   - docker build -t ekolmakov/multi-client ./client
   - docker build -t ekolmakov/multi-nginx ./nginx
   - docker build -t ekolmakov/multi-server ./server
