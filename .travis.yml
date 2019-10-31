@@ -4,6 +4,7 @@ services:
   
 before_install:
   # You will check name of test images
+  # check errors
   - docker build -t ekolmakov/react-test -f ./client/Dockerfile.dev ./client
 
 script:
