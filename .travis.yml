@@ -23,6 +23,7 @@ after_success:
   
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   
+  # i have only two images at docker hub repository
   - docker push ekolmakov/multi-client
   - docker push ekolmakov/multi-nginx
   - docker push ekolmakov/multi-server
