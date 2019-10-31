@@ -8,9 +8,9 @@ COPY package.json .
 RUN npm install
 
 # What we will update outside container
-# RUN npm update
+RUN npm update
 
-# RUN npm audit fix
+RUN npm audit fix
 
 
 COPY . .
